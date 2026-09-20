@@ -1,1 +1,1 @@
-const API_URL = "http://localhost:4000";
+const API_URL = "https://new-generation-apix.onrender.com";
