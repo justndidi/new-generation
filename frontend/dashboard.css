@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #080808;
+  color: #ffffff;
+
+  font-family: "DM Sans", sans-serif;
+
+  min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+  width: 100%;
+
+  padding: 25px 5%;
+
+  border-bottom: 1px solid #242424;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.brand {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+.brand span {
+  color: #c8f135;
+}
+
+
+.header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.header-right p {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+
+  color: #777;
+}
+
+
+#logoutBtn {
+  background: transparent;
+
+  color: #c8f135;
+
+  border: 1px solid #c8f135;
+
+  padding: 10px 18px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+#logoutBtn:hover {
+  background: #c8f135;
+
+  color: #080808;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.dashboard {
+  width: 90%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 70px 0;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.dashboard-intro {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  padding-bottom: 50px;
+
+  border-bottom: 1px solid #242424;
+}
+
+
+.label {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+
+  color: #777;
+
+  margin-bottom: 15px;
+}
+
+
+.dashboard-intro h1 {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: clamp(45px, 7vw, 90px);
+
+  line-height: 0.9;
+
+  letter-spacing: -5px;
+}
+
+
+.dashboard-intro h1 span {
+  color: #c8f135;
+}
+
+
+.description {
+  margin-top: 25px;
+
+  color: #888;
+
+  font-size: 15px;
+}
+
+
+.subscriber-count {
+  text-align: right;
+}
+
+
+.subscriber-count span {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 70px;
+
+  font-weight: 700;
+
+  color: #c8f135;
+}
+
+
+.subscriber-count p {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  color: #777;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 35px;
+}
+
+
+.stat-card {
+  min-height: 170px;
+
+  padding: 25px;
+
+  background: #0d0d0d;
+
+  border: 1px solid #242424;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition: border-color 0.2s ease;
+}
+
+
+.stat-card:hover {
+  border-color: #c8f135;
+}
+
+
+.stat-card p {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  color: #777;
+
+  letter-spacing: 0.5px;
+}
+
+
+.stat-card span {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 45px;
+
+  font-weight: 700;
+
+  color: #c8f135;
+}
+
+
+.stat-card small {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 9px;
+
+  color: #555;
+}
+
+
+/* =========================
+   SUBSCRIBER SECTION
+========================= */
+
+.subscriber-section {
+  margin-top: 50px;
+}
+
+
+.section-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   SEARCH + ACTIONS
+========================= */
+
+.dashboard-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+#searchInput {
+  width: 240px;
+
+  padding: 10px 14px;
+
+  background: #080808;
+
+  color: #ffffff;
+
+  border: 1px solid #292929;
+
+  outline: none;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 12px;
+
+  transition: border-color 0.2s ease;
+}
+
+
+#searchInput::placeholder {
+  color: #555;
+}
+
+
+#searchInput:focus {
+  border-color: #c8f135;
+}
+
+
+#refreshBtn {
+  background: #c8f135;
+
+  border: none;
+
+  color: #080808;
+
+  padding: 10px 16px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+#refreshBtn:hover {
+  opacity: 0.85;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #242424;
+}
+
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 700px;
+}
+
+
+thead {
+  background: #111;
+}
+
+
+th {
+  text-align: left;
+
+  padding: 18px 20px;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  color: #777;
+
+  border-bottom: 1px solid #242424;
+}
+
+
+td {
+  padding: 20px;
+
+  font-size: 14px;
+
+  border-bottom: 1px solid #1d1d1d;
+}
+
+
+tbody tr:hover {
+  background: #101010;
+}
+
+
+td:first-child {
+  color: #555;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+}
+
+
+td:nth-child(2) {
+  font-weight: 600;
+}
+
+
+td:nth-child(4) {
+  color: #c8f135;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  padding: 30px 0;
+
+  color: #777;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+  display: none;
+
+  padding: 15px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #8b3030;
+
+  color: #ff6b6b;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .dashboard-header {
+    padding: 20px;
+  }
+
+
+  .header-right p {
+    display: none;
+  }
+
+
+  .dashboard {
+    width: 92%;
+
+    padding: 45px 0;
+  }
+
+
+  .dashboard-intro {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+
+  .subscriber-count {
+    text-align: left;
+  }
+
+
+  .subscriber-count span {
+    font-size: 55px;
+  }
+
+
+  .dashboard-intro h1 {
+    letter-spacing: -3px;
+  }
+
+
+  /* STATS */
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .stat-card {
+    min-height: 140px;
+
+    padding: 18px;
+  }
+
+
+  .stat-card span {
+    font-size: 35px;
+  }
+
+
+  /* SECTION HEADER */
+
+  .section-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+
+  /* SEARCH */
+
+  .dashboard-actions {
+    width: 100%;
+  }
+
+
+  #searchInput {
+    flex: 1;
+
+    width: auto;
+  }
+
+}
+/* ==================================================
+   ARTIST DASHBOARD CONTROLS
+   ================================================== */
+
+
+/* SEARCH INPUT */
+
+#artistSearchInput {
+  width: 240px;
+  padding: 12px 15px;
+
+  background: #080808;
+  color: #ffffff;
+
+  border: 1px solid #444;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+
+#artistSearchInput::placeholder {
+  color: #777;
+}
+
+
+#artistSearchInput:focus {
+  border-color: #c8f135;
+}
+
+
+/* REFRESH BUTTON */
+
+#refreshArtistsBtn {
+  padding: 12px 16px;
+
+  background: transparent;
+  color: #c8f135;
+
+  border: 1px solid #c8f135;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+#refreshArtistsBtn:hover {
+  background: #c8f135;
+  color: #080808;
+}
+
+
+/* ==================================================
+   ARTIST STATUS SELECT
+   ================================================== */
+
+.artist-status {
+  width: 120px;
+
+  padding: 8px 10px;
+
+  background: #080808;
+  color: #c8f135;
+
+  border: 1px solid #444;
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  /* Custom arrow */
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #c8f135 50%),
+    linear-gradient(135deg, #c8f135 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 9px) 50%;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+
+  transition: 0.2s ease;
+}
+
+
+/* Hover */
+
+.artist-status:hover {
+  border-color: #c8f135;
+}
+
+
+/* Focus */
+
+.artist-status:focus {
+  border-color: #c8f135;
+
+  box-shadow:
+    0 0 0 1px #c8f135;
+}
+
+
+/* Dropdown options */
+
+.artist-status option {
+  background: #080808;
+  color: #ffffff;
+
+  font-family: "JetBrains Mono", monospace;
+}
+
+
+/* Disabled while saving */
+
+.artist-status:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+
+/* ==================================================
+   ARTIST SECTION
+   ================================================== */
+
+.artist-section {
+  margin-top: 60px;
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+  #artistSearchInput {
+    width: 100%;
+  }
+
+
+  #refreshArtistsBtn {
+    width: 100%;
+  }
+
+
+  .artist-status {
+    width: 110px;
+  }
+
+} 

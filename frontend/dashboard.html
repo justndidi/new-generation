@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard — NewGen</title>
+
+    <link rel="stylesheet" href="./dashboard.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="dashboard-header">
+      <div class="brand">NEWGEN<span>.</span></div>
+
+      <div class="header-right">
+        <p>ADMIN DASHBOARD</p>
+
+        <button id="logoutBtn">LOGOUT</button>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="dashboard">
+      <!-- INTRO -->
+
+      <section class="dashboard-intro">
+        <div>
+          <p class="label">NEWGEN / PRIVATE AREA</p>
+
+          <h1>SUBSCRIBERS<span>.</span></h1>
+
+          <p class="description">
+            Everyone currently subscribed to the NewGen wave.
+          </p>
+        </div>
+
+        <div class="subscriber-count">
+          <span id="subscriberCount"> 0 </span>
+
+          <p>TOTAL SUBSCRIBERS</p>
+        </div>
+      </section>
+
+      <!-- STATS -->
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <p>TOTAL</p>
+
+          <span id="totalStat"> 0 </span>
+
+          <small> SUBSCRIBERS </small>
+        </div>
+
+        <div class="stat-card">
+          <p>JOURNALISTS</p>
+
+          <span id="journalistStat"> 0 </span>
+
+          <small> MUSIC JOURNALISTS </small>
+        </div>
+
+        <div class="stat-card">
+          <p>PRODUCERS</p>
+
+          <span id="producerStat"> 0 </span>
+
+          <small> PRODUCERS </small>
+        </div>
+
+        <div class="stat-card">
+          <p>PROMOTERS</p>
+
+          <span id="promoterStat"> 0 </span>
+
+          <small> EVENT PROMOTERS </small>
+        </div>
+
+        <div class="stat-card">
+          <p>A&amp;R</p>
+
+          <span id="arStat"> 0 </span>
+
+          <small> LABEL A&amp;R </small>
+        </div>
+
+        <div class="stat-card">
+          <p>CULTURE</p>
+
+          <span id="cultureStat"> 0 </span>
+
+          <small> JUST HERE FOR THE CULTURE </small>
+        </div>
+      </section>
+
+      <!-- SUBSCRIBERS -->
+
+      <section class="subscriber-section">
+        <div class="section-header">
+          <h2>ALL SUBSCRIBERS</h2>
+
+          <div class="dashboard-actions">
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search subscribers..."
+              autocomplete="off"
+            />
+
+            <button id="refreshBtn">↻ REFRESH</button>
+          </div>
+        </div>
+
+        <!-- LOADING -->
+
+        <div id="loading" class="loading">Loading subscribers...</div>
+
+        <!-- ERROR -->
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <!-- TABLE -->
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+
+                <th>NAME</th>
+
+                <th>EMAIL</th>
+
+                <th>ROLE</th>
+
+                <th>SUBSCRIBED</th>
+              </tr>
+            </thead>
+
+            <tbody id="subscriberTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========================= -->
+      <!-- ARTIST SUBMISSIONS -->
+      <!-- ========================= -->
+
+      <section class="subscriber-section artist-section">
+        <div class="section-header">
+          <div>
+            <p class="label">NEWGEN / ARTISTS</p>
+
+            <h2>ARTIST SUBMISSIONS</h2>
+          </div>
+
+          <div class="dashboard-actions">
+            <input
+              type="search"
+              id="artistSearchInput"
+              placeholder="Search artists..."
+              autocomplete="off"
+            />
+
+            <button id="refreshArtistsBtn">↻ REFRESH</button>
+          </div>
+        </div>
+
+        <!-- ARTIST LOADING -->
+
+        <div id="artistLoading" class="loading">
+          Loading artist submissions...
+        </div>
+
+        <!-- ARTIST ERROR -->
+
+        <div id="artistErrorMessage" class="error-message"></div>
+
+        <!-- ARTIST TABLE -->
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+
+                <th>ARTIST</th>
+
+                <th>GENRE</th>
+
+                <th>LOCATION</th>
+
+                <th>MUSIC</th>
+
+                <th>EMAIL</th>
+
+                <th>STATUS</th>
+
+                <th>SUBMITTED</th>
+              </tr>
+            </thead>
+
+            <tbody id="artistTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+
+    <script src="./config.js"></script>
+    <script src="./dashboard.js"></script>
+  </body>
+</html>

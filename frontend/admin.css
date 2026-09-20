@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  min-height: 100vh;
+
+  background: #080808;
+  color: #ffffff;
+
+  font-family: "DM Sans", sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ADMIN PAGE */
+
+.admin-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+
+/* ADMIN CARD */
+
+.admin-card {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 50px 45px;
+
+  border: 1px solid #242424;
+
+  background: #0d0d0d;
+}
+
+
+/* LABEL */
+
+.label {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  color: #777;
+
+  margin-bottom: 20px;
+}
+
+
+/* HEADING */
+
+.admin-card h1 {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: clamp(35px, 7vw, 55px);
+
+  line-height: 0.95;
+
+  letter-spacing: -3px;
+}
+
+
+.admin-card h1 span {
+  color: #c8f135;
+}
+
+
+/* LINE */
+
+.line {
+  width: 100%;
+  height: 1px;
+
+  background: #242424;
+
+  margin: 35px 0;
+}
+
+
+/* FORM */
+
+#adminLoginForm {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+/* INPUT GROUP */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+
+.input-group label {
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 10px;
+
+  color: #777;
+}
+
+
+.input-group input {
+  width: 100%;
+
+  padding: 15px;
+
+  background: #080808;
+
+  color: #ffffff;
+
+  border: 1px solid #292929;
+
+  outline: none;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 14px;
+
+  transition: border-color 0.2s ease;
+}
+
+
+.input-group input::placeholder {
+  color: #555;
+}
+
+
+.input-group input:focus {
+  border-color: #c8f135;
+}
+
+
+/* LOGIN BUTTON */
+
+#adminLoginForm button {
+  width: 100%;
+
+  margin-top: 8px;
+
+  padding: 16px;
+
+  border: none;
+
+  background: #c8f135;
+
+  color: #080808;
+
+  font-family: "JetBrains Mono", monospace;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+#adminLoginForm button:hover {
+  opacity: 0.85;
+}
+
+
+#adminLoginForm button:active {
+  transform: translateY(1px);
+}
+
+
+/* LOGIN MESSAGE */
+
+.login-message {
+  min-height: 18px;
+
+  font-size: 12px;
+
+  text-align: center;
+
+  color: #777;
+}
+
+
+.login-message.error {
+  color: #ff6b6b;
+}
+
+
+.login-message.success {
+  color: #c8f135;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .admin-page {
+    padding: 15px;
+  }
+
+
+  .admin-card {
+    padding: 40px 25px;
+  }
+
+
+  .admin-card h1 {
+    letter-spacing: -2px;
+  }
+
+}

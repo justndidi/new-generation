@@ -720,32 +720,89 @@ button{
     color: #666666;
     text-align: center;
 }
-#submit form{
+#submit form {
     display: flex;
     flex-direction: column;
     width: 50%;
     margin: 30px auto 10px;
+    gap: 0;
 }
-#submit form input{
-    padding: 15px 20px;
-    background: #080808;
-    border: 1px solid #666666;
-    color: white;
-}
-#submit form input:focus{
-    border-color: #c8f135;
-    outline: none;
-}
-#submit button{
+
+
+#submit form input {
     width: 100%;
+    padding: 15px 20px;
+
+    background: #080808;
+
+    border: 1px solid #666666;
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    margin: 0;
+
+    border-radius: 0;
+}
+
+
+#submit form input + input {
+    border-top: none;
+}
+
+
+#submit form input:focus {
+    border-color: #c8f135;
+
+    outline: none;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+#submit button {
+    width: 100%;
+
     display: block;
+
     margin: 10px auto 0;
+
     background: #c8f135;
+
+    color: #080808;
+
     padding: 15px 0;
+
     text-transform: uppercase;
+
     font-weight: bold;
+
     border: none;
 
+    font-family: "JetBrains Mono", monospace;
+
+    cursor: pointer;
+}
+.artist-message {
+  margin-top: 15px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.artist-message.success {
+  color: #c8f135;
+}
+
+.artist-message.error {
+  color: #ff6b6b;
 }
 
 footer{
@@ -954,6 +1011,7 @@ footer .nav1{
     }
     .success-message{
         width: 90%;
+        gap: 0;
     }
     footer .nav1 ul li a{
         display: block;
