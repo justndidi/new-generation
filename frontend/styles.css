@@ -14,22 +14,17 @@ p{
 button{
     cursor: pointer;
 }
-/* span{
-    color: #c8f135;
-} */
+
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    /* margin: 0 30px; */
     padding: 10px 30px ;
     position: sticky;
     top: 0;
     background: black;
     z-index: 2;
-    /* text-align: center; */
-    /* background: white; */
+    
 }
 
 .nav ul {
@@ -38,13 +33,15 @@ button{
     gap: 20px;
     /* padding-top: 10px; */
     text-transform: uppercase;
-   
-    /* margin-right: 20px; */
+}
+nav li:hover{
+    transform: translateY(-2px);
 }
 .nav ul li a{
     text-decoration: none;
     color: #f0ede8;
     font-size: 13px;
+    transition: color 0.25s ease;
 }
 .new{
     color: #c8f135;
@@ -56,6 +53,7 @@ button{
 .nav ul li a:hover{
     color: #c8f135;
     cursor: pointer;
+    
 }
 .nav button{
     background: black;
@@ -64,70 +62,143 @@ button{
     padding: 8px 20px;
     border: 1px solid #c8f135;
     text-transform: uppercase;
-    /* font-weight: bold; */
+     transition: color 0.25s ease;
 }
+
 .nav button:hover{
     background: #c8f135;
     color: black;
     cursor: pointer;
+    border-radius: 20px;
 }
 .nav img{
     display: none;
 }
-.container{
+.container {
+    min-height: 520px;
     margin: 0 30px;
-    background-color: black;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url(https://w0.peakpx.com/wallpaper/695/369/HD-wallpaper-you-are-what-you-listen-to-brick-background-neon-letters-neon-inscription-quotes-about-people-quotes-about-music.jpg);
-    background-repeat: no-repeat;
+    padding: 20px 50px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(200, 241, 53, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            rgba(0, 0, 0, 0.82),
+            rgba(0, 0, 0, 0.96)
+        ),
+        url("https://w0.peakpx.com/wallpaper/695/369/HD-wallpaper-you-are-what-you-listen-to-brick-background-neon-letters-neon-inscription-quotes-about-people-quotes-about-music.jpg");
+
     background-size: cover;
-    background-position:center;
+    background-position: center;
 }
-.container h1{
+
+/* subtle grid texture */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.container h1 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 900px;
+
     color: white;
-    font-size: 80px;
-    /* width: 60%; */
+    max-width: 900px;
+    font-size: clamp(52px, 7vw, 90px);
+    line-height: 0.95;
+    letter-spacing: -3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
-.container p{
-    color: #666666;
-    /* width: 40%; */
-    margin: 20px 0 30px;
-    line-height: 25px;
+
+.container p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 620px;
+
+    color: #999;
+    margin: 30px 0;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
 }
-.container button{
+
+.container > div {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    gap: 12px;
+}
+
+.container button {
+    padding: 15px 22px;
+    margin: 10px 0;
+
+    border: 1px solid #c8f135;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.container button:hover {
+    transform: translateY(-3px);
+}
+
+.container .explore {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     background: #c8f135;
     color: black;
-    padding: 15px 20px;
-    border: none;
-    text-transform: uppercase;
-    margin: 10px 0;
 }
-.container div {
-    display: flex;
-    gap: 10px;
-}
-.explore{
-    display: flex; 
-    align-items: center;
-}
-/* .explore svg{
-    margin-left: 5px;
-} */
 
-.container .discover{
-    background: black;
-    padding: 15px 20px;
-    border: 1px solid #666666;
-    color: white;
-    /* margin-left: 10px; */
+.container .explore:hover {
+    background: white;
+    border-color: white;
+}
+
+.container .discover {
     display: flex;
     align-items: center;
+    gap: 10px;
+
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
-.container .discover:hover{
-    border: 1px solid white;
-    cursor: pointer;
-   
+
+.container .discover:hover {
+    background: white;
+    color: black;
+    border-color: white;
 }
 
 .slide{
@@ -161,7 +232,7 @@ button{
 }
 
 #genre{
-    margin: 100px 30px;
+   margin: 80px 30px;
     letter-spacing: 2px;
 }
 #genre .G001{
@@ -169,24 +240,25 @@ button{
     text-transform: uppercase;
 }
 #genre h2{
-    color: white;
+   color: white;
     text-transform: uppercase;
-    font-size: 50px;
-    margin: 10px 0;
-    /* width: 45%; */
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1;
+    margin: 10px 0 35px;
     letter-spacing: 2px;
 }
 .genre-box{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    margin: 20px 30px;
+    margin: 20px 0;
+
 }
 .genre-box .alte{
-    border: 1px solid #111111;
+    border: 1px solid #222;
     border-top: none;
     border-left: none;
-    padding: 10px 30px;
+    padding: 25px 30px;
+min-height: 280px;
 }
 .alte:hover{
     h3{
@@ -203,11 +275,14 @@ button{
 }
 .alte h3{
     color: white;
-    font-size: 30px;
-    padding: 20px 0;
+    font-size: 32px;
+    line-height: 1;
+    padding: 18px 0;
+    transition: color 0.25s ease;
+
 }
 .alte-header p{
-    color: #666666;
+    color: #888;
     font-size: 14px;
 }
 .alte-header div{
@@ -262,10 +337,11 @@ button{
     font-weight: bold;
 }
 .genre-box .naija-drill{
-    border: 1px solid #111111;
+    border: 1px solid #222;
     border-top: none;
     border-left: none;
-    padding: 10px 30px;
+    padding: 25px 30px;
+min-height: 280px;
 }
 .naija-drill:hover{
     h3{
@@ -282,11 +358,13 @@ button{
 }
 .naija-header h3{
     color: white;
-    font-size: 30px;
-    padding: 20px 0;
+    font-size: 32px;
+    line-height: 1;
+    padding: 18px 0;
+    transition: color 0.25s ease;
 }
 .naija-header p{
-    color: #666666;
+    color: #888;
     font-size: 14px;
 }
 .naija-header div{
@@ -343,10 +421,11 @@ button{
     font-weight: bold;
 }
 .afro-fusion{
-    border: 1px solid #111111;
+    border: 1px solid #222;
     border-top: none;
     border-left: none;
-    padding: 10px 30px;
+    padding: 25px 30px;
+min-height: 280px;
 }
 .afro-fusion:hover{
     h3{
@@ -363,11 +442,13 @@ button{
 }
 .afro-header h3{
     color: white;
-    font-size: 30px;
-    padding: 20px 0;
+    font-size: 32px;
+    line-height: 1;
+    padding: 18px 0;
+    transition: color 0.25s ease;
 }
 .afro-header p{
-    color: #666666;
+    color: #888;
     font-size: 14px;
 }
 .afro-header div{
@@ -474,6 +555,26 @@ button{
         color: #8ab4ff;
     }
 }
+.genre-box > div {
+    position: relative;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.genre-box > div:hover {
+    background: rgba(200, 241, 53, 0.035);
+    transform: translateY(-4px);
+}
+.genre-box button {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.genre-box button:hover {
+    transform: translateX(5px);
+}
 
 
 
@@ -514,16 +615,20 @@ button{
     grid-template-rows: repeat(2, 1fr);
     margin: 20px 0;
 }
-.artist-box img{
+.artist-box img {
     width: 100%;
-    max-width: 400px;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
     display: block;
+    transition: transform 0.5s ease;
 }
 .zay {
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+.zay:hover img {
+    transform: scale(1.04);
 }
 .overlay{
     position: absolute;
@@ -539,6 +644,7 @@ button{
 }
 .zay:hover .overlay{
     opacity: 1;
+    transform: translateY(0);
     cursor: pointer;
 }
 .overlay p{
@@ -551,10 +657,16 @@ button{
     color: #c8f135;
 
 }
-.zay-content{
+.zay-content {
     color: white;
-    padding: 20px;
+    padding: 18px 20px 24px;
     font-weight: bold;
+    border-bottom: 1px solid #222;
+}
+
+.zay-content h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
 }
 
 .zay-content div{
@@ -562,45 +674,56 @@ button{
     display: flex;
     justify-content: space-between;
 }
-.zay-content div span{
+.zay-content div span {
     font-size: 13px;
-    color: #666666;
+    color: #777;
+    letter-spacing: 0.5px;
 }
 .cruel{
     border-left: 1px solid #111111;
     border-right: 1px solid #111111;
 }
-#about{
-    margin: 50px 30px;
+#about {
+    margin: 100px 30px;
+    padding: 80px 0;
     letter-spacing: 2px;
+    border-top: 1px solid #222;
 }
-#about .about1 p{
-    color:#666666;
-    font-size: 15px;
-    padding-top: 20px;
+#about .about1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#about .about1 p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.8;
     text-transform: none;
-    border-left: 2px solid #c8f135;
-    padding-left: 20px;
-    width: 70%;
-    /* width: 50%;
-    margin: 20px 0 30px;
-    line-height: 30px; */
+
+    border-top: 1px solid #333;
+    border-left: none;
+
+    padding: 20px 0 0;
+    width: 100%;
 }
 #about p{
     color:#c8f135;
     text-transform: uppercase;
 }
-#about h2{
+#about h2 {
     color: white;
     text-transform: uppercase;
-    font-size: 50px;
-    margin: 10px 0;
-    /* width: 50%; */
-    letter-spacing: 4px;
-    padding-bottom: 30px;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 0.95;
+    margin: 15px 0 60px;
+    letter-spacing: -2px;
 }
-.who{
-    margin: 100px 0;
+.who {
+    margin: 80px 30px 40px;
+    padding: 100px 0;
+    border-top: 1px solid #222;
+    
 }
 .loop{
     color: #c8f135;
@@ -615,61 +738,87 @@ button{
 .loop span{
     color: white;
 }
-.loop h2{
-    font-size: 40px;
-    letter-spacing: 4px;
+.loop h2 {
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 0.95;
+    letter-spacing: -2px;
 }
 .who .loop{
     text-align: center;
 }
-.who-p{
-    text-align: center;
+.who-p {
+    max-width: 600px;
+    margin: 0 auto;
     padding-top: 20px;
+
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
 }
 .who p{
     color: #666666;
     text-align: center;
     font-size: 14px;
 }
-.who form{
+.who form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: 30px auto 10px;
+
+    width: min(520px, 90%);
+    margin: 35px auto 10px;
+
+    gap: 8px;
 }
-.who form input{
-    padding: 15px 20px;
-    background: #111111;
-    border: 1px solid #666666;
+.who form input,
+.who form select {
+    padding: 16px 18px;
+
+    background: #111;
+    border: 1px solid #292929;
+
     color: white;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+
+    transition: border-color 0.25s ease;
 }
-.who form input:focus{
+
+.who form input::placeholder {
+    color: #666;
+}
+
+.who form input:focus,
+.who form select:focus {
     border-color: #c8f135;
-    outline: none;
-}
-.who form select{
-    padding: 15px 20px;
-    background: #111111;
-    color: #666666;
-}
-.who form select:hover{
-    cursor: pointer;
-}
-.who form select:focus{
-    border-color: #c8f135;
-    border-top: none;
     outline: none;
 }
 
-.who button{
+.who button {
     width: 100%;
-    display: block;
-    margin: 10px auto 0;
+    margin: 5px auto 0;
+
     background: #c8f135;
-    padding: 15px 0;
-    text-transform: uppercase;
+    color: #080808;
+
+    padding: 16px 20px;
+
+    border: 1px solid #c8f135;
+
+    font-family: "JetBrains Mono", monospace;
     font-weight: bold;
-    border: none;
+    text-transform: uppercase;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.who button:hover {
+    background: white;
+    border-color: white;
+    transform: translateY(-2px);
 }
 
 .success-message{
@@ -692,39 +841,46 @@ button{
 .success-message.show{
     display: block;
 }
-/* .who button:hover{
-    background: fad;
-} */
-/* there is an operation that happens when you submit the form. figure that out*/
 
-#submit{
-    background:#111111;
-    padding: 100px 0;
+
+#submit {
+    background: #0b0b0b;
+    padding: 100px 30px;
+    border-top: 1px solid #222;
 }
 #submit .submit{
     text-transform: uppercase;
     text-align: center;
    
 }
-#submit .submit p{
+#submit .submit span{
     color: #c8f135;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
-#submit .submit h2{
+#submit .submit h2 {
     color: white;
-    font-size: 40px;
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1;
     margin: 20px 0;
-    letter-spacing: 4px;
+    letter-spacing: -2px;
 }
-#submit p{
+/* #submit p{
+    color: #666666;
+    text-align: center;
+} */
+#submit  p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-size: 14px;
     color: #666666;
     text-align: center;
 }
 #submit form {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: 30px auto 10px;
+    width: min(520px, 90%);
+    margin: 35px auto 10px;
     gap: 0;
 }
 
@@ -748,8 +904,11 @@ button{
     margin: 0;
 
     border-radius: 0;
+    transition: border-color 0.25s ease;
 }
-
+#submit form input::placeholder {
+    color: #666;
+}
 
 #submit form input + input {
     border-top: none;
@@ -789,6 +948,14 @@ button{
     font-family: "JetBrains Mono", monospace;
 
     cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+#submit button:hover {
+    background: white;
+    transform: translateY(-2px);
 }
 .artist-message {
   margin-top: 15px;
@@ -805,49 +972,90 @@ button{
   color: #ff6b6b;
 }
 
-footer{
-    background:#080808;
-
+footer {
+    background: #080808;
+    padding-top: 20px;
+    border-top: 1px solid #222;
 }
-footer .nav1{
+
+footer .nav1 {
     display: flex;
     justify-content: space-between;
-    margin: 10px 30px 20px;
-    padding: 10px 0 30px;
-    border-bottom: 1px solid #666666;
+    align-items: center;
+
+    margin: 0 30px;
+    padding: 20px 0 30px;
+
+    border-bottom: 1px solid #222;
     background: #080808;
 }
+
 .nav1 ul {
     display: flex;
     list-style: none;
-    gap: 20px;
-    /* padding-top: 10px; */
+    gap: 25px;
     text-transform: uppercase;
 }
-.nav1 ul li a{
+
+.nav1 ul li a {
     text-decoration: none;
-    color: #666666;
-    font-size: 13px;
+    color: #666;
+    font-size: 12px;
+    transition: color 0.25s ease;
 }
-.nav1 ul li a:hover{
-    color: white;
+
+.nav1 ul li a:hover {
+    color: #c8f135;
 }
-.nav1 .lagos{
-    color: #666666;
+
+.nav1 .lagos {
+    color: #666;
     text-transform: none;
-    font-size: 13px;
-    padding-top: 10px;
+    font-size: 12px;
 }
-.copyright{
-    color: #666666;
+
+.copyright {
+    color: #555;
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px 30px;
-    font-size: 13px;
+    padding: 20px 30px 30px;
+    font-size: 12px;
 }
 
-@media(min-width: 481px) and (max-width: 960px){
+@media (min-width: 481px) and (max-width: 960px) {
 
+    .genre-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .artist-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .zay .overlay {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(0, 0, 0, 0.8) 55%,
+        rgba(0, 0, 0, 0.25) 100%
+    );
+    padding: 20px;
+    justify-content: flex-end;
+}
+    .zay .overlay p {
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 420px;
+}
+
+.zay .overlay a {
+    color: #c8f135;
+    font-size: 13px;
+}
 }
 
 @media(max-width: 480px) {
@@ -936,18 +1144,34 @@ footer .nav1{
     nav{
         margin: 0 10px;
     }
-    .container{
-        margin: 20px;
-    }
-    .container h1{
-        font-size: 40px;
-    }
-    .container p{
-        width: 100%;
-    }
-    .container div {
-        display: block;
-    }
+  .container {
+    min-height: 500px;
+    margin: 0 10px;
+    padding: 50px 20px;
+}
+
+.container h1 {
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 0.98;
+    letter-spacing: -2px;
+}
+
+.container p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 25px 0;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.container button {
+    width: 100%;
+    justify-content: center;
+}
     #genre h2{
         font-size: 30px;
     }
@@ -960,39 +1184,76 @@ footer .nav1{
         line-height: 30px;
     }
     .artist-box{
-        /* display: grid;
-        grid-template-columns: repeat(2, 200px);
-        grid-template-rows: repeat(3, 1fr); */
         display: block;
     }
-    /* .artist-box img{
-        width: 200px;
-    } */
-    .overlay{
-        padding: 25px 10px;
-    }
-    .overlay p{
-        font-size: 12px;
-    }
-    .overlay a{
-        font-size: 14px;
-    }
+   
+    .zay {
+    height: 420px;
+}
+
+.artist-box img {
+    height: 420px;
+    object-fit: cover;
+}
+
+.zay .overlay {
+    opacity: 1;
+    transform: translateY(0);
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.35),
+        transparent
+    );
+    padding: 20px;
+    justify-content: flex-end;
+}
+
+.zay .overlay p {
+    color: #ddd;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.zay .overlay a {
+    font-size: 12px;
+}
+
+.zay-content {
+    padding: 15px;
+}
+
+.zay-content h4 {
+    font-size: 16px;
+}
     .zay-content div span{
         font-size: 12px;
     }
-    #about h2{
-        font-size: 30px;
-    }
-    #about .about1 p{
-        width: 100%;
-    }
+    #about {
+    margin: 60px 20px;
+    padding: 50px 0;
+}
+
+#about h2 {
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+#about .about1 {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+#about .about1 p {
+    font-size: 14px;
+}
     .loop h2{
         font-size: 30px;
     }
     .who-p {
-       font-size: 30px;
-       margin: 0 20px;
-    }
+    font-size: 14px;
+    margin: 0 20px;
+}
     .who form{
         width: 90%;
     }
@@ -1000,32 +1261,38 @@ footer .nav1{
         margin: 0 20px;
         /* width: 90%; */
     }
+    #submit {
+    padding: 70px 20px;
+}
     #submit .submit h2{
-        font-size: 30px;
+        font-size: 36px;
     }
     #submit p{
         margin: 0 20px;
     }
     #submit form{
-        width: 90%;
+        width: 100%;
     }
     .success-message{
         width: 90%;
         gap: 0;
     }
-    footer .nav1 ul li a{
-        display: block;
-        padding-top: 20px;
-    }
-    footer .nav1{
-        display: block;
-    }
-    .copyright{
-        display: block;
-        font-size: 12px;
-    }
-    .copyright p:nth-child(2){
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
+    footer .nav1 {
+    margin: 0 20px;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.nav1 ul {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+}
+
+.copyright {
+    padding: 20px;
+    flex-direction: column;
+    gap: 8px;
+}
 }

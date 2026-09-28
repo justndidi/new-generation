@@ -1,13 +1,29 @@
+const listenBtn = document.querySelector("#listenBtn");
+
+listenBtn.addEventListener("click", () => {
+    window.open("https://open.spotify.com/", "_blank");
+});
+
+const button = document.querySelector(".explore");
+button.addEventListener("click", ()=>{
+  location.href= "#genre"
+});
+
+const secondButton = document.querySelector(".discover");
+secondButton.addEventListener("click", ()=>{
+  location.href = "#artists"
+})
+
 const btn = document.querySelector(".button");
 const content = document.querySelector(".alte-hidden");
 
 btn.addEventListener("click", () => {
-  if (content.style.display == "none") {
+  if (getComputedStyle(content).display === "none") {
     content.style.display = "block";
     btn.textContent = "close x";
   } else {
     content.style.display = "none";
-    btn.textContent = "read more";
+    btn.textContent = "read more →";
   }
 });
 
@@ -15,12 +31,12 @@ btn.addEventListener("click", () => {
 const btn_2 = document.querySelector(".button_2");
 const content_2 = document.querySelector(".naija-hidden");
 btn_2.addEventListener("click", () => {
-  if (content_2.style.display == "none") {
+  if (getComputedStyle(content_2).display === "none") {
     content_2.style.display = "block";
     btn_2.textContent = "close x";
   } else {
     content_2.style.display = "none";
-    btn_2.textContent = "read more";
+    btn_2.textContent = "read more →";
   }
 });
 
@@ -28,12 +44,12 @@ btn_2.addEventListener("click", () => {
 const btn_3 = document.querySelector(".button_3");
 const content_3 = document.querySelector(".hidden");
 btn_3.addEventListener("click", () => {
-  if (content_3.style.display == "none") {
+  if (getComputedStyle(content_3).display === "none") {
     content_3.style.display = "block";
     btn_3.textContent = "close x";
   } else {
     content_3.style.display = "none";
-    btn_3.textContent = "read more";
+    btn_3.textContent = "read more →";
   }
 });
 
@@ -41,12 +57,12 @@ btn_3.addEventListener("click", () => {
 const btn_4 = document.querySelector(".button_4");
 const content_4 = document.querySelector(".hidden-1");
 btn_4.addEventListener("click", () => {
-  if (content_4.style.display == "none") {
+  if (getComputedStyle(content_4).display === "none") {
     content_4.style.display = "block";
     btn_4.textContent = "close x";
   } else {
     content_4.style.display = "none";
-    btn_4.textContent = "read more";
+    btn_4.textContent = "read more →";
   }
 });
 
@@ -54,12 +70,12 @@ btn_4.addEventListener("click", () => {
 const btn_5 = document.querySelector(".button_5");
 const content_5 = document.querySelector(".hidden-2");
 btn_5.addEventListener("click", () => {
-  if (content_5.style.display == "none") {
+  if (getComputedStyle(content_5).display === "none") {
     content_5.style.display = "block";
     btn_5.textContent = "close x";
   } else {
     content_5.style.display = "none";
-    btn_5.textContent = "read more";
+    btn_5.textContent = "read more →";
   }
 });
 
@@ -67,12 +83,12 @@ btn_5.addEventListener("click", () => {
 const btn_6 = document.querySelector(".button_6");
 const content_6 = document.querySelector(".hidden-3");
 btn_6.addEventListener("click", () => {
-  if (content_6.style.display == "none") {
+  if (getComputedStyle(content_6).display === "none") {
     content_6.style.display = "block";
     btn_6.textContent = "close x";
   } else {
     content_6.style.display = "none";
-    btn_6.textContent = "read more";
+    btn_6.textContent = "read more →";
   }
 });
 
