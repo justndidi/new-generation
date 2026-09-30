@@ -1,31 +1,24 @@
 import "dotenv/config";
+import nodemailer from "nodemailer";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
 
 const sendEmail = async ({ to, subject, html }) => {
   try {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-
-      headers: {
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-
-      body: JSON.stringify({
-        from: "New Gen <onboarding@resend.dev>",
-        to: [to],
-        subject,
-        html,
-      }),
+    const info = await transporter.sendMail({
+      from: `"NewGen" <${process.env.EMAIL_USER}>`,
+      to,
+      subject,
+      html,
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error("Resend API Error:", data);
-      return false;
-    }
-
-    console.log("Email sent:", data.id);
+    console.log("Email sent:", info.messageId);
 
     return true;
   } catch (error) {
@@ -33,7 +26,6 @@ const sendEmail = async ({ to, subject, html }) => {
     return false;
   }
 };
-
 
 export const sendWelcomeEmail = async (email, username) => {
   return sendEmail({

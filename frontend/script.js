@@ -110,6 +110,15 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
+  // Get the submit button
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  // Immediately show that the request is being processed
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = "Joining NewGen...";
+  }
+
   try {
     const response = await fetch(`${API_URL}/api/subscribe`, {
       method: "POST",
@@ -134,21 +143,43 @@ form.addEventListener("submit", async (event) => {
       // Show success message
       successMessage.classList.add("show");
 
-      welcomeText.textContent = `Welcome to the wave, ${name}. You're officially part of NewGen.`;
+      welcomeText.textContent =
+        `Welcome to the wave, ${name}. You're officially part of NewGen.`;
 
       // Bring form back after 5 seconds
       setTimeout(() => {
         successMessage.classList.remove("show");
         form.style.display = "flex";
         form.reset();
+
+        // Reset button
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "Join the wave";
+        }
       }, 5000);
+
     } else {
       // Backend errors such as duplicate email
       alert(data.message || "Something went wrong.");
+
+      // Allow the user to try again
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Join the wave";
+      }
     }
+
   } catch (error) {
     console.error("Error:", error);
+
     alert("Unable to connect to the server.");
+
+    // Allow the user to try again
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Join the wave";
+    }
   }
 });
 // ==========================================

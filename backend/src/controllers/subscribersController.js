@@ -29,7 +29,7 @@ const subscribeSchema = Joi.object({
 
 export const subscribe = async (req, res) => {
   try {
-
+    console.log("SUBSCRIBE CONTROLLER HIT");
     // Validate request data
     const { error, value } = subscribeSchema.validate(req.body);
 
